@@ -18,8 +18,6 @@ class TodoList extends React.Component {
     }
 
     handleCheck(e) {
-        console.log(e.target.id)
-        console.log(e.target.checked)
         this.props.onCheck(e.target.id, e.target.checked);
     }
 
@@ -71,6 +69,9 @@ class TodoCreateBox extends React.Component {
         this.setState({item_text: e.target.value});
     }
     handleAdd(e) {
+        if(!this.state.item_text.trim()) {
+          return;
+        }
         const item = {
             id: global_id++,
             text: this.state.item_text,
@@ -112,7 +113,7 @@ class TodoApp extends React.Component {
 
     handleCheck(itemId, status) {
         const updatedList = this.state.list.map(item => {
-            if(item.id === parseInt(itemId)){
+            if(item.id === parseInt(itemId, 10)){
                 item.isDone = status
             }
             return item
