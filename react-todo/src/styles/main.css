@@ -1,0 +1,11 @@
+body {
+    color: grey;
+}
+
+li {
+    list-style-type: none;
+}
+
+.text-strikethrough {
+    text-decoration: line-through;
+}
