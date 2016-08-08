@@ -112,7 +112,7 @@ class TodoApp extends React.Component {
 
     handleCheck(itemId, status) {
         const updatedList = this.state.list.map(item => {
-            if(item.id == itemId){
+            if(item.id === parseInt(itemId)){
                 item.isDone = status
             }
             return item
@@ -127,7 +127,7 @@ class TodoApp extends React.Component {
         var tempList = this.state.list
 
         for(var i = 0; i < tempList.length; i++) {
-            if( tempList[i].id == itemId ){
+            if( tempList[i].id === parseInt(itemId, 10) ){
                 index = i;
                 break;
             }
