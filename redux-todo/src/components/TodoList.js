@@ -9,6 +9,8 @@ export default class TodoList extends React.Component {
                 <Todo
                     key={todo.id}
                     text={todo.text}
+                    done={todo.done}
+                    onChangeTodo={() => this.props.onChangeTodo(todo.id)}
                 />
             )
         });
