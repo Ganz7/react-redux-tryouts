@@ -1,10 +1,10 @@
 const todos = (state = [], action) => {
     switch (action.type) {
         case 'ADD_TODO':
-            return {
+            return state.concat({
                 id: action.id,
                 text: action.text
-            }
+            });
         default:
             return state;
     }
